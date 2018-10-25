@@ -121,5 +121,5 @@ class ViewController: UIViewController, NMDatePickerDelegate {
 
 ## Info
 
-- Swift 3.1 
+- Swift 4.1 
 

@@ -134,7 +134,7 @@ final public class NMDatePickerController: UIView {
         contentView.addSubview(selectButton)
         
         /* Title */
-        titleLabel.font = UIFont.systemFont(ofSize: 14.0, weight: 0.2)
+        titleLabel.font = UIFont.systemFont(ofSize: 14.0, weight: UIFont.Weight(rawValue: 0.2))
         titleLabel.text = "Please choose the date and press 'Select' or 'Cancel'"
         titleLabel.lineBreakMode = .byWordWrapping
         titleLabel.numberOfLines = 0
@@ -147,13 +147,13 @@ final public class NMDatePickerController: UIView {
         
         /* Now button */
         nowButton.setTitle("Now",for: .normal)
-        nowButton.titleLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: 0.3)
+        nowButton.titleLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight(rawValue: 0.3))
         nowButton.backgroundColor = UIColor.white
         nowButton.addTarget(self, action: #selector(nowButtonPressed(_:)), for: .touchUpInside)
         
         /* Cancel button */
         cancelButton.setTitle("Cancel",for: .normal)
-        cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: 0.3)
+        cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight(rawValue: 0.3))
         cancelButton.backgroundColor = UIColor.white
         cancelButton.addTarget(self, action: #selector(cancelButtonPressed(_:)), for: .touchUpInside)
         
