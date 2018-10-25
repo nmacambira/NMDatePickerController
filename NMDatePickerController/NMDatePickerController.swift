@@ -87,8 +87,7 @@ final public class NMDatePickerController: UIView {
         }
     }
     
-    private func setupView() {
-        
+    private func setupView() {        
         let keyWindow = UIApplication.shared.keyWindow
         let keyWindowBounds: CGRect = (keyWindow?.bounds)!
         self.frame = keyWindowBounds
@@ -124,7 +123,6 @@ final public class NMDatePickerController: UIView {
     }
     
     private func contentViewConfig() {
-        
         /* ContentView */
         contentView.frame = CGRect(x: 0, y: self.frame.height, width: self.frame.width, height: 370)
         contentView.addSubview(titleLabel)
@@ -224,7 +222,6 @@ final public class NMDatePickerController: UIView {
     }
 
     private func configVerticalConstraintsOfHiddenViews() {
-        
         var verticalConstraints = NSLayoutConstraint.constraints(
             withVisualFormat: "V:[titleLabel(50)]-1-[nowButton(50)]-1-[datePicker(200)]-1-[cancelButton(50)]-16-|",
             options: [],
@@ -260,39 +257,29 @@ final public class NMDatePickerController: UIView {
     }
     
     @objc private func nowButtonPressed(_ sender: UIButton) {
-        
         datePicker.date = Date()
     }
     
     @objc private func cancelButtonPressed(_ sender: UIButton) {
-      
         dismiss()
         delegate?.datePickerCancelButtonAction()
     }
     
     @objc private func selectButtonPressed(_ sender: UIButton) {
-        
         dismiss()
         let date = self.datePicker.date
         delegate?.datePickerSelectButtonAction(dateSelected: date)
     }
     
     private func show() {
-        
         UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: { () -> Void in
-            
             self.contentView.frame = CGRect(x: 0, y: self.frame.height - self.contentView.frame.height, width: self.frame.width, height: self.contentView.frame.height)
             self.backgroundView.alpha = 1.0
-            
-        }) { (Bool) -> Void in
-            
-        }
+        })
     }
     
     @objc private func dismiss() {
-        
         UIView.animate(withDuration: 0.6, delay: 0, options: .beginFromCurrentState, animations: { () -> Void in
-            
             self.contentView.frame = CGRect(x: 0, y: self.frame.height, width: self.frame.width, height: self.contentView.frame.height)
             self.backgroundView.alpha = 0
             
